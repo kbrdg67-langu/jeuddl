@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>formationMS — Assistant de recherche (défilement)</title>
+  <style>
+    /* CSS interne minimal : zone défilante pour l'image */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:system-ui,Segoe UI,Roboto,Arial}
+    .layout{display:flex;height:100vh}
+
+    .viewer{flex:1;display:flex}
+    /* Zone qui défile verticalement, scrollbar native (fonctionne au trackpad / deux doigts) */
+    .scroll-area{
+      flex:1;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      padding:16px;
+      background:white;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    /* Image responsive ; si elle est plus grande que la fenêtre, la zone défilera */
+    .scroll-area img{display:block;max-width:100%;height:auto}
+
+    /* Sur petits écrans, empile la sidebar au-dessus */
+    @media (max-width:800px){
+      .layout{flex-direction:column}
+     }
+  </style>
+</head>
+<body>
+  <div class="layout">
+  
+    <main class="viewer">
+      <div class="scroll-area">
+        <!-- Remplacez le src ci-dessous par l'URL ou le chemin de votre image longue -->
+        <img src="https://kbrdg67-langu.github.io/jeuddl/AR-tt.png" alt="Image défilante">
+      </div>
+    </main>
+  </div>
+</body>
+</html>
